@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import ClickUpForm from '../components/ClickUpForm.svelte';
+---
+
+<Layout title="Welcome to Astro + Svelte">
+	<main>
+<h1>Create a New ClickUp Ticket</h1>
+<ClickUpForm client:idle />
+	</main>
+</Layout>
