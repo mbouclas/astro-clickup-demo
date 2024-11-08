@@ -1,13 +1,15 @@
 import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
 import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
 
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   output: 'hybrid',
-  adapter: node({
+  adapter: vercel({
     mode: 'standalone',
   }),
   integrations: [svelte(), tailwind()],
 });
+
