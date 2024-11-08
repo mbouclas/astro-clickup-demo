@@ -18,6 +18,7 @@
     "astro": "^4.15.3",
     "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.1",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "svelte": "^4.2.12",
     "tailwindcss": "^3.4.14"

@@ -8,9 +8,9 @@ export const POST: APIRoute = async ({ request }) => {
 
   console.log('*** ', FormData);
   // ClickUp API credentials and list ID
-  const clickUpToken = 'pk_152639259_U3LIJRBM0D7S8AB7CUHDM6ZQV316S07Q';
-  const listId = '901205577229';
-  console.log('*** ', 'submiting');
+  const clickUpToken = import.meta.env.TOKEN;
+  const listId = import.meta.env.LIST_ID;
+  console.log('*** ', 'submiting',import.meta.env.LIST_ID);
 
   try {
     const { title, description }: FormData = await request.json();
