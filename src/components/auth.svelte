@@ -1,12 +1,13 @@
 <script>
     import { onMount } from "svelte";
+    import {writable} from 'svelte/store';
     import { PublicClientApplication } from "@azure/msal-browser";
     import { msalConfig, loginRequest } from "../services/login";
   
     let msalInstance;
+    let user = writable(null);
 
 onMount(async () => {
-    console.log(msalConfig)
   msalInstance = new PublicClientApplication(msalConfig);
   await msalInstance.initialize();
 });
@@ -21,7 +22,15 @@ async function signIn() {
   }
 }
   </script>
+  {#if $user === null}
   
   <button on:click={signIn} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
     Sign in with Microsoft
   </button>
+
+  {:else}
+  <div class="bg-white p-6">
+  <p>Token:  {$user.accessToken}</p>
+ <p>User: {$user.account.name}</p>
+</div>
+  {/if}
