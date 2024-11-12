@@ -2,11 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 
 import ClickUpForm from '../components/ClickUpForm.svelte';
+import Auth from '../components/auth.svelte';
 ---
 
 <Layout title="Welcome to Astro + Svelte">
 	<main>
 <h1>Create a New ClickUp Ticket</h1>
 <ClickUpForm client:idle />
+
+<Auth client:idle />
 	</main>
+
+	
 </Layout>
